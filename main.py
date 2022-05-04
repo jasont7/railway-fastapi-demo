@@ -10,9 +10,8 @@ app = FastAPI()
 def home():
     return {"Hello": "World from FastAPI"}
 
-# get random number between min(default:0) and max(default:9)
 @app.get("/random/")
-def get_random(min: Optional[int] = 0, max: Optional[int] = 9):
+def get_random(min: Optional[int] = 0, max: Optional[int] = 7):
     rval = random.randint(min, max)
     return { "value": rval }
 
